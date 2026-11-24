@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GPSSync Lab 隱私權政策</title>
+<style>
+  body { font-family: -apple-system, "Segoe UI", "Microsoft JhengHei", sans-serif;
+         max-width: 820px; margin: 40px auto; padding: 0 20px; line-height: 1.75; color: #222; }
+  h1 { font-size: 1.6rem; border-bottom: 2px solid #1565c0; padding-bottom: 8px; }
+  h2 { font-size: 1.15rem; margin-top: 32px; color: #1565c0; }
+  code { background: #f2f2f2; padding: 1px 5px; border-radius: 4px; }
+  .muted { color: #666; font-size: .92rem; }
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; }
+  th, td { border: 1px solid #ddd; padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: #f7f9fc; }
+</style>
+</head>
+<body>
+
+<h1>GPSSync Lab 隱私權政策</h1>
+<p class="muted">生效日期：2026 年 11 月 24 日　·　最後更新：2026 年 11 月 24 日</p>
+
+<p>GPSSync Lab（以下稱「本應用程式」）是一款供開發者與測試人員使用的區網定位模擬工具。
+本政策說明本應用程式會處理哪些資料、如何使用，以及你擁有的選擇。</p>
+
+<h2>1. 我們不收集你的資料</h2>
+<p>本應用程式<strong>沒有</strong>開發者伺服器，也<strong>沒有</strong>帳號系統。我們不會收集、上傳、出售或分享你的個人資料。
+本應用程式不含廣告、分析工具或第三方追蹤 SDK。</p>
+
+<h2>2. 本應用程式在本機處理的資料</h2>
+<table>
+  <tr><th>資料</th><th>用途</th><th>是否離開裝置</th></tr>
+  <tr>
+    <td>你在地圖上選擇或輸入的經緯度</td>
+    <td>作為模擬定位座標，注入本機或區網內已配對的裝置</td>
+    <td>僅在你主動操作時，經加密連線傳送到你配對的另一台裝置（區域網路內）</td>
+  </tr>
+  <tr>
+    <td>裝置名稱、區域網路 IP、通訊埠</td>
+    <td>讓控制端能在同一個 WiFi 中發現被控端</td>
+    <td>僅透過 UDP 廣播於同一個區域網路</td>
+  </tr>
+  <tr>
+    <td>6 位數配對碼</td>
+    <td>建立加密連線前的身分確認</td>
+    <td>僅用於區網內的加密握手</td>
+  </tr>
+  <tr>
+    <td>目前定位（僅被控端畫面顯示用）</td>
+    <td>顯示系統目前回報的座標，方便驗證模擬是否生效</td>
+    <td>否，僅顯示於裝置畫面上</td>
+  </tr>
+</table>
+
+<h2>3. 定位權限</h2>
+<p>本應用程式需要 <code>ACCESS_FINE_LOCATION</code> 權限，原因如下：</p>
+<ul>
+  <li>被控端需要讀取系統目前定位，以顯示模擬是否成功。</li>
+  <li>Android 要求使用模擬定位（test provider）的應用程式必須具備定位權限。</li>
+</ul>
+<p>被控端另需要在系統「開發人員選項 → 選取模擬位置應用程式」中被手動選取。此授權由使用者自行完成，本應用程式無法自行取得。</p>
+
+<h2>4. 網路通訊</h2>
+<p>控制端與被控端之間的連線採用 ECDH（P-256）金鑰交換、HKDF 衍生金鑰與 AES-256-GCM 加密。
+所有通訊只在同一個區域網路內進行，不會經過網際網路或任何伺服器。</p>
+
+<h2>5. 資料保存</h2>
+<p>座標與連線狀態只保存在記憶體中，關閉應用程式或停止服務後即消失。
+本應用程式不會建立座標歷史紀錄，也不會寫入資料庫。</p>
+
+<h2>6. 兒童隱私</h2>
+<p>本應用程式並非設計給 13 歲以下兒童使用，我們也不會刻意收集兒童的資料。</p>
+
+<h2>7. 你的選擇</h2>
+<ul>
+  <li>可隨時在 Android 設定中撤銷定位權限。</li>
+  <li>可在「開發人員選項 → 選取模擬位置應用程式」中取消選取本應用程式。</li>
+  <li>解除安裝本應用程式即可刪除所有本機資料。</li>
+</ul>
+
+<h2>8. 政策變更</h2>
+<p>若本政策有重大變更，我們會更新本頁面上方的「最後更新」日期。</p>
+
+<h2>9. 聯絡方式</h2>
+<p>若對本政策有任何疑問，請聯絡：<br>
+<strong>電子郵件：</strong> <a href="mailto:YOUR_EMAIL@example.com">YOUR_EMAIL@example.com</a></p>
+
+</body>
+</html>
